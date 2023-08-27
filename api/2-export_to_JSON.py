@@ -19,8 +19,11 @@ if __name__ == "__main__":
         f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}")
     todo_data = todo_response.json()
 
-    USER_ID = employee_data['id']
-    USERNAME = employee_data['username']
+    for key, value in employee_data.items():
+        if key == "id":
+            USER_ID = value
+        if key == "username":
+            USERNAME = value
 
     json_filename = f"{USER_ID}.json"
 
