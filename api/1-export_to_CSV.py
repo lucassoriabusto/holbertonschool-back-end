@@ -18,21 +18,6 @@ if __name__ == "__main__":
         f"https://jsonplaceholder.typicode.com/todos?userId={employee_id}")
     todo_data = todo_response.json()
 
-    total_tasks = len(todo_data)
-    completed_tasks = 0
-    completed_task_titles = []
-
-    for task in todo_data:
-        if task["completed"]:
-            completed_tasks += 1
-            completed_task_titles.append(task["title"])
-
-    print(f"Employee {employee_data['name']} "
-          f"is done with tasks({completed_tasks}/{total_tasks}):")
-
-    for task in completed_task_titles:
-        print(f"\t {task}")
-
     for key, value in employee_data.items():
         if key == "id":
             USER_ID = value
