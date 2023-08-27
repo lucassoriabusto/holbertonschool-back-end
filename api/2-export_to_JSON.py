@@ -39,7 +39,7 @@ if __name__ == "__main__":
                 "username": USERNAME})
 
     """ Dictionary with the user id as key and a list as value. """
-    data_to_export = {str(USER_ID): tasks_list}
+    data_to_export = {USER_ID: tasks_list}
 
     with open(json_filename, 'w') as f:
         json.dump(data_to_export, f)
